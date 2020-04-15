@@ -16,6 +16,17 @@ do
 	if [[ $line == *"CasperLabs"* ]];then
 		target=$(echo $line |  awk -F' ' '{print $2}')
 		kill -9 $target
+		break
+	fi
+done
+
+tmp=$(ps -ef | grep nodef)
+echo $tmp | while read line 
+do 
+	if [[ $line == *"nodef"* ]];then
+		target=$(echo $line |  awk -F' ' '{print $2}')
+		kill -9 $target
+		break
 	fi
 done
 
