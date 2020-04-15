@@ -75,3 +75,7 @@ expect eof
 
 nodef collect-gentxs
 nodef validate-genesis
+
+cp ~/.nodef/config/genesis.json ~/git/hdac-test
+cp ~/.nodef/config/manifest.toml ~/git/hdac-test
+cat  ~/.nodef/config/genesis.json | jq .app_state.genutil.gentxs[0].value.memo > ~/git/hdac-test/seed-address.txt
